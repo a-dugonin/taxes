@@ -77,7 +77,7 @@ class Buddhist:
         while self.get_karma_level() <= KARMA:
             self.one_day()
         print(f'Для достижения цели потребовалось {self.count_day} дней')
-        print(f'Теперь ваша карама {self.get_karma_level()}')
+        print(f'Теперь ваша карма {self.get_karma_level()}')
 
 
 def main():
