@@ -21,7 +21,6 @@ class Stack(list):
             self.insert(index - 1, elem)
 
 
-
 class TaskManager:
     """
     Базовый класс TaskManager позволяющий создать менеджер задач.
@@ -29,6 +28,7 @@ class TaskManager:
         task_list - стек задач, по умолчанию пустой
         task_priorities_available - стек имеющихся приоритетов задач, по умолчанию пустой
     """
+
     def __init__(self) -> None:
         self.task_list = Stack()
         self.task_priorities_available = Stack()
