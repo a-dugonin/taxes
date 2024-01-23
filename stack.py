@@ -2,7 +2,7 @@ class Stack(list):
     """
     Дочерний класс Stack, родитель: list
     Позволяет создать стек - абстрактный тип данных, представляющий собой список элементов, организованных по принципу
-    LIFO (англ. last in — first out, «последним пришёл — первым вышел»).
+    по принципу переданного индекса для добавления элемента
     Данный класс унаследован от класса list, поэтому имеет все его родительские методы.
     В данном классе переопределен только метод append родительского класса list
     """
@@ -10,15 +10,16 @@ class Stack(list):
     def append(self, elem, index: int = 0) -> None:
         """
         Метод добавляет элементы относительно переданного индекса. Если индекс не передан в метод, то элемент
-        по умолчанию становится на первое место в списке
-        :param elem: object
+        по умолчанию становится на последнее место в стеке
+        :param elem: Any
         :param index: int
         :return: None
         """
-        if index >= len(self):
-            self.insert(index - 1, elem)
+        if index == 0:
+            self.insert(len(self), elem)
         else:
-            self.insert(index, elem)
+            self.insert(index - 1, elem)
+
 
 
 class TaskManager:
@@ -36,7 +37,7 @@ class TaskManager:
     def create_new_task(task: str, priority: int) -> Stack:
         """
         Метод позволяет создать новый список задач с определенным приоритетом.
-        :param task: задача
+        :param task: наименование задачи
         :param priority: приоритет задачи
         :return: Stack
         """
@@ -48,7 +49,7 @@ class TaskManager:
     def add_task(self, task: str, priority: int) -> None:
         """
         Метод добавляет задачу в менеджер задач согласно приоритета задачи
-        :param task: задача
+        :param task: наименование задачи
         :param priority: приоритет задачи
         :return: None
         """
@@ -66,20 +67,23 @@ class TaskManager:
     def remove_task(self, task: str) -> None:
         """
         Метод удаляет задачу из менеджера задач
-        :param task: задача
+        :param task: наименование задачи
         :return: None
         """
         for tasks in self.task_list:
             if task in tasks and len(tasks) > 2:
                 tasks.remove(task)
+                break
             else:
                 if task in tasks:
                     self.task_list.remove(tasks)
+                    break
 
     def __str__(self) -> str:
         task_list_string = 'Список задач:\n'
-        for task in self.task_list:
-            task_list_string += f"{task[-1]} - {'; '.join(task[:-1])}\n"
+        for task in self.task_list[:-1]:
+            task_list_string += f"{task[0]} - {'; '.join(task[1:])}\n"
+        task_list_string += 'Не приоритетные задачи: ' + '; '.join(self.task_list[-1][1:])
         return f'{task_list_string}'
 
 
@@ -94,6 +98,11 @@ if __name__ == '__main__':
     manager.add_task("погладить кошку", 5)
     manager.add_task("выпить кофе", 3)
     manager.add_task('почистить кофемашину', 1)
+    manager.add_task('побриться', 8)
+    manager.add_task('постирать', 6)
+    manager.add_task('убрать', 7)
+    manager.add_task('выпить', 0)
+    manager.add_task('сходить в караоке', 0)
     print(manager)
     print()
     manager.remove_task('поесть')
