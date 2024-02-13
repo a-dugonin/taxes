@@ -1,6 +1,7 @@
 import random
 from monsters import MonsterBerserk, MonsterHunter
 from heroes import Tank, Healer, Attacker
+from stack import TaskManager
 
 
 def one_year_of_war():
@@ -85,3 +86,27 @@ if count_of_wins < 10:
     print("Героям нужна другая тактика, попробуйте ещё!")
 else:
     print("Герои готовы к реальному сражению, задание выполнено!")
+
+
+manager = TaskManager()
+manager.add_task("сделать уборку", 4)
+manager.add_task("помыть посуду", 4)
+manager.add_task("отдохнуть", 1)
+manager.add_task("поесть", 2)
+manager.add_task("поесть", 2)
+manager.add_task("сдать ДЗ", 2)
+manager.add_task("погладить кошку", 5)
+manager.add_task("выпить кофе", 3)
+manager.add_task('почистить кофемашину', 1)
+manager.add_task('побриться', 8)
+manager.add_task('постирать', 6)
+manager.add_task('убрать', 7)
+manager.add_task('выпить', 0)
+manager.add_task('сходить в караоке', 0)
+print(manager)
+print()
+manager.remove_task('поесть')
+print(manager)
+print()
+manager.remove_task('сдать ДЗ')
+print(manager)
