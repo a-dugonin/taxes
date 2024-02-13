@@ -5,6 +5,7 @@ from stack import TaskManager
 from my_dict import MyDict
 from taxes import Apartment, Car, CountryHouse
 from karma import Buddhist
+from abstract_class import Circle, Triangle, Rectangle
 
 
 # count_money = float(input('Введите количество ваших денег: '))
@@ -138,3 +139,10 @@ manager = TaskManager()
 # print()
 # manager.remove_task('сдать ДЗ')
 # print(manager)
+
+circle = Circle(5)
+triangle = Triangle(3, 5)
+rectangle = Rectangle(4, 8)
+print(circle.area)
+print(triangle.area)
+print(rectangle.area)
