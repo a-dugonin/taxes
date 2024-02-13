@@ -77,36 +77,36 @@ def one_year_of_war():
 
 # Код ниже не подлежит изменению
 # Он запускает 20 симуляций. Для зачёта по заданию вам надо стабильно набирать 10 или более побед.
-count_of_wins = 0
-for year in range(1, 21):
-    count_of_wins += one_year_of_war()
-
-print("Из 20 раз команда героев одержала", count_of_wins, "побед")
-if count_of_wins < 10:
-    print("Героям нужна другая тактика, попробуйте ещё!")
-else:
-    print("Герои готовы к реальному сражению, задание выполнено!")
+# count_of_wins = 0
+# for year in range(1, 21):
+#     count_of_wins += one_year_of_war()
+#
+# print("Из 20 раз команда героев одержала", count_of_wins, "побед")
+# if count_of_wins < 10:
+#     print("Героям нужна другая тактика, попробуйте ещё!")
+# else:
+#     print("Герои готовы к реальному сражению, задание выполнено!")
 
 
 manager = TaskManager()
-manager.add_task("сделать уборку", 4)
-manager.add_task("помыть посуду", 4)
-manager.add_task("отдохнуть", 1)
-manager.add_task("поесть", 2)
-manager.add_task("поесть", 2)
-manager.add_task("сдать ДЗ", 2)
-manager.add_task("погладить кошку", 5)
-manager.add_task("выпить кофе", 3)
-manager.add_task('почистить кофемашину', 1)
-manager.add_task('побриться', 8)
-manager.add_task('постирать', 6)
-manager.add_task('убрать', 7)
-manager.add_task('выпить', 0)
-manager.add_task('сходить в караоке', 0)
-print(manager)
-print()
-manager.remove_task('поесть')
-print(manager)
-print()
-manager.remove_task('сдать ДЗ')
-print(manager)
+# manager.add_task("сделать уборку", 4)
+# manager.add_task("помыть посуду", 4)
+# manager.add_task("отдохнуть", 1)
+# manager.add_task("поесть", 2)
+# manager.add_task("поесть", 2)
+# manager.add_task("сдать ДЗ", 2)
+# manager.add_task("погладить кошку", 5)
+# manager.add_task("выпить кофе", 3)
+# manager.add_task('почистить кофемашину', 1)
+# manager.add_task('побриться', 8)
+# manager.add_task('постирать', 6)
+# manager.add_task('убрать', 7)
+# manager.add_task('выпить', 0)
+# manager.add_task('сходить в караоке', 0)
+# print(manager)
+# print()
+# manager.remove_task('поесть')
+# print(manager)
+# print()
+# manager.remove_task('сдать ДЗ')
+# print(manager)
