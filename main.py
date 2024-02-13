@@ -2,6 +2,12 @@ import random
 from monsters import MonsterBerserk, MonsterHunter
 from heroes import Tank, Healer, Attacker
 from stack import TaskManager
+from my_dict import MyDict
+
+
+new_dict = MyDict({1: 'a', 2: 'b'})
+print(new_dict.get(1))
+print(new_dict.get(3))
 
 
 def one_year_of_war():
